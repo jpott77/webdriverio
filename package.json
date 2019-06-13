@@ -1,0 +1,27 @@
+{
+  "name": "webdriverio-tutorial",
+  "version": "1.0.0",
+  "description": "This is a webdriverio course by Julia Pottinger",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/.bin/wdio ./wdio.conf.js",
+    "actions": "./node_modules/.bin/wdio ./wdio.conf.js --suite actions"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/dot-reporter": "^5.7.8",
+    "@wdio/local-runner": "^5.9.1",
+    "@wdio/mocha-framework": "^5.9.1",
+    "@wdio/selenium-standalone-service": "^5.8.4",
+    "@wdio/spec-reporter": "^5.8.0",
+    "@wdio/sync": "^5.9.1",
+    "chai": "^4.2.0",
+    "chai-webdriverio": "^1.0.0",
+    "local-runner": "^0.1.1-alpha",
+    "webdriverio": "^5.9.1"
+  },
+  "dependencies": {
+    "@wdio/cli": "^5.9.1"
+  }
+}
