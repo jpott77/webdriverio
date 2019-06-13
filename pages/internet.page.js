@@ -58,17 +58,25 @@ class Internet {
         this.enableButton.click()
     }
 
+    /** 
+     * Click the Page Button
+     */
     clickPageButton() {
         this.pageButton.waitForDisplayed()
         this.pageButton.click()
     }
 
-
+    /** 
+     * Click the Example Button
+     */
     clickExampleButton() {
         this.exampleButton.waitForDisplayed()
         this.exampleButton.click()
     }
-
+    /**
+     * Clicks the delete button
+     * @param {Number} index index of the element
+     */
     clickDeleteButton(index) {
         this.deleteButton(index).waitForDisplayed()
         this.deleteButton(index).click()
@@ -83,7 +91,9 @@ class Internet {
         this.javascriptAlertButton(index).click()
     }
 
-
+    /** 
+     * Click the dropdown Button
+     */
     clickDropdownMenu() {
         this.dropdownMenu.waitForDisplayed()
         this.dropdownMenu.click()
