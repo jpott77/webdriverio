@@ -31,6 +31,9 @@ exports.config = {
     suites: {
         actions: [
             './test/actions/*.js'
+        ],
+        login: [
+            './test/Chapter6.5 Assignment Solution/*.js'
         ]
     },
     // Patterns to exclude.
