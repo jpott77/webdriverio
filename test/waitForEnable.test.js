@@ -6,7 +6,7 @@ describe("Wait For Enabled", function () {
         internetPage.clickEnableButton()
         internetPage.inputEnabledField.waitForEnabled(4000)
         assert.equal(true, internetPage.inputEnabledField.isEnabled())
-        browser.debug()
+        //browser.debug() Uncomment to test how the debug functionality works
     })
     it('should wait for the input field to be disabled', () => {
         internetPage.clickEnableButton()
