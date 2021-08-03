@@ -24,7 +24,7 @@ class Internet {
     get hereLink() { return $('.example a') }
 
     get iframeBody() { return $('#tinymce') }
-    get iframe() { return $('#mceu_27 #mce_0_ifr') }
+    get iframe() { return $('#mce_0_ifr') }
 
     get columnA() { return $('#column-a') }
     get columnB() { return $('#column-b') }
