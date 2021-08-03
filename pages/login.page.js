@@ -1,40 +1,58 @@
-class Login {
-    get username() { return $('#username') }
-    get password() { return $('#password') }
-    get loginButton() { return $('#login button') }
+const Page = require('./page');
+
+/**
+ * sub page containing specific selectors and methods for a specific page
+ */
+class LoginPage extends Page {
+    /**
+     * define selectors using getter methods
+     */
+    get inputUsername () { return $('#username') }
+    get inputPassword () { return $('#password') }
+    get btnSubmit () { return $('button[type="submit"]') }
     get flashMessage() { return $('#flash-messages #flash') }
     get logoutButton() { return $('.example .button') }
+
+    /**
+     * a method to encapsule automation code to interact with the page
+     * e.g. to login using username and password
+     */
+    async login (username, password) {
+        await (await this.inputUsername).setValue(username);
+        await (await this.inputPassword).setValue(password);
+        await (await this.btnSubmit).click();
+    }
 
     /**
      * Enter the username into the field
      * @param {String} text username to be entered
      */
-    enterUsername(text) {
-        this.username.waitForDisplayed()
-        this.username.setValue(text)
+     enterUsername(text) {
+        this.inputUsername.waitForDisplayed()
+        this.inputUsername.setValue(text)
     }
 
     /**
      * Enter the password into the field
      * @param {String} text password to be entered
      */
-    enterPassword(text) {
-        this.password.waitForDisplayed()
-        this.password.setValue(text)
+     enterPassword(text) {
+        this.inputPassword.waitForDisplayed()
+        this.inputPassword.setValue(text)
     }
 
     /**
      * Click login button
      */
-    clickLoginButton() {
-        this.loginButton.waitForDisplayed()
-        this.loginButton.click()
+     clickLoginButton() {
+        this.btnSubmit.waitForDisplayed()
+        this.btnSubmit.click()
     }
 
     /**
      * Get the text from the flash message
      */
-    getFlashMessageText() {
+     getFlashMessageText() {
         this.flashMessage.waitForDisplayed()
         return this.flashMessage.getText()
     }
@@ -42,10 +60,17 @@ class Login {
     /**
      * Click logout button
      */
-    clickLogoutButton() {
+     clickLogoutButton() {
         this.logoutButton.waitForDisplayed()
         this.logoutButton.click()
     }
 
+    /**
+     * overwrite specifc options to adapt it to page object
+     */
+    open () {
+        return super.open('login');
+    }
 }
-module.exports = new Login()
+
+module.exports = new LoginPage();
