@@ -10,7 +10,7 @@ describe('Wait For Exist', function () {
     })
     it('should wait for the delete button to not exist', () => {
         internetPage.clickDeleteButton(1)
-        internetPage.deleteButton(1).waitForExist(500, true)
+        internetPage.deleteButton(1).waitForExist({timeout:500, reverse:true})
         assert.equal(false, internetPage.deleteButton(1).isExisting())
         browser.pause(2000)
     })

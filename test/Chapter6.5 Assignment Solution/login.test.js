@@ -5,20 +5,20 @@ describe("Login Page", function () {
     it("Should enter username", () => {
         browser.url(`${browser.options.baseUrl}/login`)
         login.enterUsername(data.validUserName)
-        assert.equal(login.username.getValue(), data.validUserName)
+        assert.equal(login.inputUsername.getValue(), data.validUserName)
     })
     it("Should enter password", () => {
         login.enterPassword(data.validPassword)
-        assert.equal(login.password.getValue(), data.validPassword)
+        assert.equal(login.inputPassword.getValue(), data.validPassword)
     })
     it("Should successfully log in user with correct name and password", () => {
         login.clickLoginButton()
-        login.loginButton.waitForDisplayed(2000, true)
+        login.btnSubmit.waitForDisplayed({timeout: 3000, reverse: true})
         assert.equal('You logged into a secure area!\n×', login.getFlashMessageText())
     })
     it("Should successfully log out", () => {
         login.clickLogoutButton()
-        login.logoutButton.waitForDisplayed(2000, true)
+        login.logoutButton.waitForDisplayed({timeout: 3000, reverse: true})
         assert.equal('You logged out of the secure area!\n×', login.getFlashMessageText())
     })
     it("Should get correct message for missing username", () => {

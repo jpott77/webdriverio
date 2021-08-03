@@ -10,7 +10,7 @@ describe("Wait For Enabled", function () {
     })
     it('should wait for the input field to be disabled', () => {
         internetPage.clickEnableButton()
-        internetPage.inputEnabledField.waitForEnabled(4000, true)
+        internetPage.inputEnabledField.waitForEnabled({timeout:4000, reverse:true})
         assert.equal(false, internetPage.inputEnabledField.isEnabled())
     })
 })
