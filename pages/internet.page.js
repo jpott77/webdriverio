@@ -133,8 +133,8 @@ class Internet {
      */
     sendTextToBody(text) {
         this.iframeBody.waitForDisplayed()
-        this.iframeBody.clearValue()
         this.iframeBody.click()
+        this.iframeBody.clearValue()
         this.iframeBody.keys(text)
     }
 
