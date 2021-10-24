@@ -8,6 +8,7 @@ describe("Wait For Enabled", function () {
         assert.equal(true, internetPage.inputEnabledField.isEnabled())
         wdioExpect(internetPage.inputEnabledField).toBeEnabled()
         wdioExpect(internetPage.inputEnabledField).not.toBeDisabled()
+        wdioExpect(internetPage.enableButton).toHaveAttributeContaining ('autocomplete', 'off')
         //browser.debug() Uncomment to test how the debug functionality works
     })
     it('should wait for the input field to be disabled', () => {
