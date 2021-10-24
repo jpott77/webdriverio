@@ -10,6 +10,15 @@ describe('My Login application', () => {
         await wdioExpect(SecurePage.flashAlert).toHaveTextContaining(
             'You logged into a secure area!');
     });
+
+    it('should login with valid credentials', () => {
+        LoginPage.open();
+
+        LoginPage.loginSync('tomsmith', 'SuperSecretPassword!');
+        wdioExpect(SecurePage.flashAlert).toBeExisting();
+        wdioExpect(SecurePage.flashAlert).toHaveTextContaining(
+            'You logged into a secure area!');
+    });
 });
 
 
