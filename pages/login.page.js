@@ -23,6 +23,12 @@ class LoginPage extends Page {
         await (await this.btnSubmit).click();
     }
 
+    async loginSync (username, password) {
+        this.inputUsername.setValue(username);
+        this.inputPassword.setValue(password);
+        this.btnSubmit.click();
+    }
+
     /**
      * Enter the username into the field
      * @param {String} text username to be entered
